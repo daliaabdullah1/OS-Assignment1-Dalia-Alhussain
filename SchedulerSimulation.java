@@ -143,6 +143,9 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
+    // Feature 2: Static Counter for Context Switches
+    public static int contextSwitchCount = 0;
+
     public static void main(String[] args) {
         int studentID = 445052058;  
         
@@ -183,13 +186,9 @@ public class SchedulerSimulation {
         // Create 'numProcesses' number of processes
         for (int i = 1; i <= numProcesses; i++) {
             int burstTime = timeQuantum/2 + random.nextInt(2 * timeQuantum + 1);
-            
-            // Feature 1: Generate random priority between 1 and 10 (10 = highest)
             int priority = 1 + random.nextInt(10);
             
-            // Create a new process object with name, burst time, time quantum, and priority
             Process process = new Process("P" + i, burstTime, timeQuantum, priority);
-            
             addProcessToQueue(process, processQueue, processMap);
         }
         
@@ -221,6 +220,9 @@ public class SchedulerSimulation {
             }
             System.out.println(Colors.BRIGHT_WHITE + "]" + Colors.RESET);
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
+            
+            // Feature 2: Increment Context Switch Counter
+            contextSwitchCount++;
             
             currentThread.start();
             
@@ -254,9 +256,12 @@ public class SchedulerSimulation {
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
                          "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                          Colors.RESET + "\n");
+                         
+        // Feature 2 Output: Print Total Context Switches
+        System.out.println(Colors.BOLD + Colors.BRIGHT_YELLOW + "=== CONTEXT SWITCH STATISTICS ===" + Colors.RESET);
+        System.out.println(Colors.CYAN + "Total Context Switches: " + Colors.BRIGHT_GREEN + contextSwitchCount + Colors.RESET + "\n");
     }
     
-    // Method to add a process to the queue and map, displaying priority (Feature 1)
     public static void addProcessToQueue(Process process, Queue<Thread> processQueue, 
                                        Map<Thread, Process> processMap) {
         Thread thread = new Thread(process);
@@ -264,7 +269,6 @@ public class SchedulerSimulation {
         processQueue.add(thread);
         processMap.put(thread, process);
         
-        // Print message indicating the process has entered ready queue along with its priority
         System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + 
                           Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET + 
                           " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" + 
