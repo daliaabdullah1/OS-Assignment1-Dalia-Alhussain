@@ -186,7 +186,7 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[Working on this project helped me understand how threads are managed in Java. I learned how to use ⁠Thread.sleep()⁠ to simulate the time a process takes to run on the CPU. It was interesting to see how processes can be paused and resumed using basic thread control methods. I also learned why it is important to wait for threads to finish properly using ⁠Thread.join()⁠. One thing that surprised me was how tricky it can be to coordinate multiple processes without messing up the execution order. Overall, it gave me a much clearer picture of how operating systems handle task switching behind the scenes..]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -194,7 +194,7 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[The most challenging part of this assignment was adding the priority handling alongside the standard Round-Robin queue rotation. At first, it was really hard to figure out how to sort processes by priority without breaking the basic FIFO order of the queue. Every time a new process arrived, the rotation would get messed up and the output wouldn't look right. I spent a lot of time trying different ways to organize the ready queue so everything would run smoothly. It took quite a bit of trial and error to get the logic working correctly, but it felt great when it finally did..]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -202,7 +202,7 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[To overcome the challenges I faced, I relied on a step-by-step debugging approach. Whenever something went wrong with the queue or the priority sorting, I added ⁠System.out.println⁠ statements everywhere to track how the processes were moving. This helped me see exactly where the code was failing instead of guessing blindly. I also tested my code after making every small change to make sure I didn't break things that were already working. Re-reading the assignment instructions and looking back at examples cleared up a lot of confusion. Taking it slow and testing each feature individually made the whole process much easier to manage..]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -210,7 +210,7 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[We can use multithreading and scheduling concepts in many everyday apps. For example, in a web browser like Chrome, different tabs and downloads run on separate threads so the app doesn't freeze when one page takes time to load. Music apps also use background threads to play songs smoothly while letting users browse or chat at the same time. In video games, multithreading helps handle graphics, user clicks, and sounds all at once without lagging. Just like our CPU scheduler handles different processes, operating systems use these ideas to give every app a fair share of time. This shows why good task management is so important for keeping software fast and easy to use.]
 
 ### Optional: What would you like to learn more about?
 
