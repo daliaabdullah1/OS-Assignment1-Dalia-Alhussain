@@ -161,14 +161,13 @@ Entry 3 - [Day 3: Testing & Final Questions/Documentation]
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
-
-**Most challenging part**:
-
-**Most interesting learning**:
-
-**What I would do differently next time**:
-
+Total time spent on assignment: 8 hours
+Most challenging part:
+Trying to balance the priority sorting with the normal Round-Robin queue rotation without messing up the process order.
+Most interesting learning:
+Seeing how CPU scheduling algorithms actually work in code and how small changes in queue logic affect the waiting times.
+What I would do differently next time:
+I would plan out the priority sorting logic a bit earlier to save some time while coding.
 ---
 
 # Part B: Reflection (0.5 mark)
