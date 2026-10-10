@@ -129,83 +129,33 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+Entry 1 - [Day 1: Repository Setup & Basic Structure]
+ What I did: Opened my GitHub account, created the repository, and started building the basic Java code structure for the Round-Robin CPU scheduler.
+ Details: Wrote the main process class with fields like Process ID, Arrival Time, and Burst Time, and set up the initial queue structure.
+ Challenges: I had a bit of trouble figuring out how to handle processes arriving at different times in the queue.
+ Solution: I added a quick condition to check the arrival time before pushing processes into the ready queue.
+ Time spent: 2 hours
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+Entry 2 - [Day 2: Full Feature Implementation]
+ What I did: Finished coding all the main features, like the Round-Robin logic, priority levels, context switches, and calculating the metrics.
+ Details: Added a priority system from 1 to 10, wrote the logic to count how many times the CPU switches, and calculated waiting and turnaround times.
+ Challenges: Balancing the priority sorting while keeping the normal Round-Robin queue rotating properly was tricky.
+ Solution: Used a custom comparator to sort by priority without messing up the queue order.
+ Time spent: 4 hours
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+Entry 3 - [Day 3: Testing & Final Questions/Documentation]
+ What I did: Tested the program to make sure it works fine, cleaned up the output screen, and finished writing down all the answers in my MY_WORK.md file.
+ Details: Ran a few tests with different values, checked if the math for waiting time is correct, and answered the reflection questions.
+ Challenges: Making sure I answered all parts of the assignment correctly and cleanly.
+ Solution: Organized the answers into clear bullet points and wrapped up the repository.
+ Time spent: 2 hours
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
-
-### Entry 5 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
-
-### Entry 6 - [Optional - Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
 
 ## Development Log Summary
 
