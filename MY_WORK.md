@@ -242,7 +242,7 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[A process has its own memory space, while a thread shares memory inside the same process. We used threads in ⁠SchedulerSimulation.java⁠ because they are faster and lighter to create than separate processes. The ⁠Process⁠ class in our code is just a simulation, and it runs using a real Java thread via the ⁠new Thread(process)⁠ line in ⁠addProcessToQueue()⁠. This helps us simulate CPU scheduling easily without complex operating system overhead..]
 
 ## Question 2: Ready Queue Behavior
 
@@ -254,15 +254,20 @@ I would plan out the priority sorting logic a bit earlier to save some time whil
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, if a process doesn't finish within its time quantum, it is paused and sent back to the end of the ready queue. For example, in my program output, process ⁠P1⁠ was re-queued multiple times because its burst time was larger than the time quantum. Re-queuing matters for fairness because it ensures that no single process monopolizes the CPU and every process gets an equal turn..]
 
 Example from my output:
 ```
+[P1] added to ready queue (Burst: 6, Priority: 1)
+[P1] executed for time quantum. Remaining burst: 3
+[P1] added to ready queue (Burst: 3, Priority: 1)
+[P1] executed for time quantum. Remaining burst: 0
+
 [Paste a relevant snippet from your program output here showing a process being re-queued]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[The output snippet shows that process ⁠P1⁠ started with a large burst time. After its time quantum expired, it was re-queued because it wasn't finished yet. It went through this process until its remaining burst reached zero]
 
 ## Question 3: Thread Lifecycle
 
@@ -272,15 +277,11 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
-
-2. **Runnable**: [When does P1 become Runnable?]
-
-3. **Running**: [When is P1 Running?]
-
-4. **Waiting**: [When and why would a thread be Waiting?]
-
-5. **Terminated**: [When is P1 Terminated?]
+1 New: ⁠P1⁠ enters this state when it is created inside ⁠addProcessToQueue()⁠.  
+2 Runnable: ⁠P1⁠ becomes runnable when its thread is started in the scheduler loop using ⁠Thread.start()⁠.  
+3 Running: ⁠P1⁠ is running when its thread executes the code inside ⁠run()⁠.  
+4 Waiting: The main thread enters a waiting state using ⁠join()⁠, while ⁠P1⁠'s thread waits or sleeps using ⁠Thread.sleep()⁠.  
+5 Terminated: ⁠P1⁠ is terminated when its ⁠run()⁠ method finishes execution completely and the thread stops.
 
 ## Question 4: Real-World Applications
 
@@ -293,29 +294,29 @@ Example from my output:
 ### Example 1 (operating-system level): [Name of scenario]
 
 **Description**:
-[Describe the real-world scenario.]
+[Operating system schedulers manage multiple running user applications and system programs on a computer processor. The OS allots a fixed slice of time (time quantum) to each program so that everyone gets a fair turn.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[It guarantees fairness and responsiveness by making sure no single heavy program freezes the computer. Every app gets a predictable and equal share of CPU time, just like our simulator.]
 
 ### Example 2: [Name of application/scenario]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[Modern web browsers handle multiple open tabs and background extensions concurrently. The browser engine shares computing resources among these tabs so they can load or play media together.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+It provides high responsiveness by rotating CPU attention quickly between active tabs. This prevents a slow-loading webpage from freezing the entire browser window.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.The clear distinction between simulation processes and real Java threads.
+2.How ready queue re-queuing and time quanta ensure fairness in scheduling.
+3.The tracking of thread lifecycle states from creation to termination.
 
 **Concepts I need to study more:**
-1.
-2.
+1.Advanced priority preemption handling in multi-level queues.
+2.Managing thread synchronization and race conditions under heavy loads.
 
 ---
 
